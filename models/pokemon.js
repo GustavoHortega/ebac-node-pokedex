@@ -36,6 +36,10 @@ const Pokemon = new Schema({
     estatisticas: {
         type: Object,
         required: true
+    },
+    listadeJogos: {
+        type: Object,
+        required: true
     }
 
 })
