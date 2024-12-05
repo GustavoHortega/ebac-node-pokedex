@@ -12,16 +12,14 @@ const buscaInfoPokemon = (pokeId) => {
             const altura = data.height;
             const peso = data.weight;
             const imagem = data.sprites.other['official-artwork'].front_default;
-            const ataques = data.abilities.map(a => a.ability.name).join(', ')
-            const listaDeJogos = data.game_indices.map(a => a.version.name).join(' ').split(' ');
-            console.log(listaDeJogos); 
+            const ataques = data.abilities.map(a => a.ability.name).join(', ');
+            const jogos = data.game_indices.map(a => a.version.name).join(' ').split(' '); console.log(jogos);
 
 
             const estatisticas = {};
 
             data.stats.forEach((estatistica) => {
                 estatisticas[estatistica.stat.name] = estatistica.base_stat;
-                console.log(estatisticas);
             });
             
             resolve({
@@ -32,7 +30,7 @@ const buscaInfoPokemon = (pokeId) => {
                 imagem,
                 ataques,
                 estatisticas,
-                listaDeJogos,
+                jogos,
             })
 
         }).catch((e) => reject(e));       

@@ -7,7 +7,7 @@ const router = express.Router();
 
 router.post('/captura/:id', (req, res) => {
     buscaInfoPokemon(req.params.id).then((pokemon) => {
-        const pokemonFoiCapturado = Math.random() <= 0.4;
+        const pokemonFoiCapturado = Math.random() <= 1.0; console.log(pokemonFoiCapturado);
 
         if(pokemonFoiCapturado) {
             Pokemon.create(pokemon).then((pokemonCapturado) => {

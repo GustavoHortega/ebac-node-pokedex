@@ -37,7 +37,7 @@ const Pokemon = new Schema({
         type: Object,
         required: true
     },
-    listadeJogos: {
+    jogos:{
         type: Object,
         required: true
     }
