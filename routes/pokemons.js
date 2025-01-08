@@ -4,19 +4,18 @@ const { Pokemon } = require('../models')
 
 const router = express.Router();
 
-router.get('/', (__,res)=> {
-    Pokemon.find({}).then(pokemons => {
-        pokemons.forEach(pokemon =>{
-            const dataIso = pokemon._id.getTimestamp().toISOString();
-            const dataInfo = dataIso.split('T')[0];
-            dataEmPedacos = dataInfo.split('-');
+router.get('/', async (__,res)=> {
+    const pokemons = await Pokemon.find();
+    pokemons.forEach(pokemon =>{
+        const dataIso = pokemon._id.getTimestamp().toISOString();
+        const dataInfo = dataIso.split('T')[0];
+        dataEmPedacos = dataInfo.split('-');
 
-            pokemon.capturadoEm = `${dataEmPedacos[2]}/${dataEmPedacos[1]}/${dataEmPedacos[0]}`
-        });
+        pokemon.capturadoEm = `${dataEmPedacos[2]}/${dataEmPedacos[1]}/${dataEmPedacos[0]}`
+    });
 
-        res.render('paginas/pokemons/index', {
-            pokemons,
-        });
+    res.render('paginas/pokemons/index', {
+        pokemons,
     });
 });
 
