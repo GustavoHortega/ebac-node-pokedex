@@ -1,3 +1,5 @@
+const dotenv = require('dotenv').config();
+
 const express = require('express'); //express import
 const expressEjsLayouts = require('express-ejs-layouts'); // EJS-Layouts import
 const path = require('path'); //path import

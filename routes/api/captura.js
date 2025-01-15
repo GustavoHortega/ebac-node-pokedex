@@ -7,7 +7,7 @@ const router = express.Router();
 
 router.post('/captura/:id', (req, res) => {
     buscaInfoPokemon(req.params.id).then((pokemon) => {
-        const pokemonFoiCapturado = Math.random() <= 1.0; console.log(pokemonFoiCapturado);
+        const pokemonFoiCapturado = Math.random() <= 0.4; console.log(pokemonFoiCapturado);
 
         if(pokemonFoiCapturado) {
             Pokemon.create(pokemon).then((pokemonCapturado) => {
@@ -16,6 +16,10 @@ router.post('/captura/:id', (req, res) => {
                     id: pokemonCapturado._id,
                 })
             }).catch(e => res.status(500).json({ erro: e}));
+        }else{
+            res.render('paginas/pokemons/index', {
+                pokemons,
+            });
         }
 
     }).catch(_ => res.status(404).json({ erro: "Pokemon não encontrado :(" }));
