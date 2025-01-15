@@ -2,7 +2,7 @@ const axios = require('axios');
 
 const buscaInfoPokemon = (pokeId) => {
     return new Promise((resolve, reject) => {
-        const url = 'https://pokeapi.co/api/v2/pokemon/' + pokeId;
+        const url = process.env.API_EXTERNA_URL + pokeId;
 
         axios.get(url).then(resultado => {
             const data = resultado.data;
