@@ -1,10 +1,10 @@
 const axios = require('axios');
 
 const buscaInfoPokemon = (pokeId) => {
-    return new Promise((resolve, reject) => {
+    return new Promise( async (resolve, reject) => {
         const url = process.env.API_EXTERNA_URL + pokeId;
-
-        axios.get(url).then(resultado => {
+        try{
+        const resultado = await axios.get(url)
             const data = resultado.data;
 
             const id = data.id;
@@ -33,9 +33,12 @@ const buscaInfoPokemon = (pokeId) => {
                 jogos,
             })
 
-        }).catch((e) => reject(e));       
+        }catch(e){
+            
+            reject(e);
+
+        }       
     
     });
-};
-
+}
 module.exports = buscaInfoPokemon;
