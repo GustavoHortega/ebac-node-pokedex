@@ -15,11 +15,7 @@ const createErro = require('http-errors');
 //Importa routers
 const batalhaRouter = require('./routes/batalha');
 const pokemonsRouter = require('./routes/pokemons');
-const capturaRouter = require('./routes/api/captura')
-
-
-
-
+const apiRouter = require('./routes/api');
 
 //EJS e Layouts
 app.set('views', path.join(__dirname, 'views'));
@@ -34,7 +30,7 @@ app.use('/pokemons', pokemonsRouter);
 app.use('/batalha', batalhaRouter);
 
 //rotas api
-app.use('/api', capturaRouter)
+app.use('/api', apiRouter);
 
 //Erros
 app.use((_req, _res, next) => {
@@ -49,7 +45,8 @@ app.use((err, _req, res, _next) => {
     });
 });
 
-const port = 3000;
+//Sobe a aplicação na porta selecionada.
+const port = process.env.PORTA_APLICACAO;
 
 app.listen(3000, ()=>{
     connect();

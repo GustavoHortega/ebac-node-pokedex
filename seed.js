@@ -1,5 +1,4 @@
-require('dotenv').config();
-
+//PARA TESTES - POPULA O BANCO COM 10 POKEMONS
 const mongoose = require('mongoose');
 
 const { connect, Pokemon } = require('./models');
