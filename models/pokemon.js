@@ -31,7 +31,7 @@ const Pokemon = new Schema({
     },
     ataques: {
         type: String,
-        required: true,
+        required: true
     },
     estatisticas: {
         type: Object,
