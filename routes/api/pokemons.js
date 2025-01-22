@@ -48,4 +48,46 @@ router.get('/', async (req, res) =>{
     }
 });
 
+//CRUD - READ
+router.get('/:id', async (req, res) =>{
+    try {
+        const pokemon = await Pokemon.findOne({_id: req.params.id});
+        res.json({
+            sucesso: true,
+            pokemon: pokemon,
+        })
+    } catch (e) {
+        res.status(404).json({
+            sucesso: false,
+            erro: "pokemon não encontrado!",
+        })
+        
+    }
+});
+
+//CRUD - UPDATE (PATCH - faz o update somente do atributo indicado sem a necessidade de passar todos so parametros do pokemon):)
+router.patch('/:id', async (req, res) =>{
+    try {
+        const pokemon = await Pokemon.findOne({_id: req.params.id});
+
+        Object.keys(req.body).forEach((atributo) => {
+            pokemon[atributo] = req.body[atributo];
+        });
+
+        await pokemon.save();
+
+        res.json({
+            sucesso: true,
+            pokemon, pokemon,
+        });
+
+    } catch (e) {
+        res.status(422).json({
+            sucesso: false,
+            erro: e,
+        });
+    }
+})
+
+
 module.exports = router;
