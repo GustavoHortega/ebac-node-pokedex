@@ -1,10 +1,16 @@
 //PARA TESTES - POPULA O BANCO COM 10 POKEMONS
 const mongoose = require('mongoose');
 
-const { connect, Pokemon } = require('./models');
+const { Pokemon } = require('./models');
+
+const connect = () =>{
+    mongoose.connect('mongodb://localhost:27017/pokedex');
+};
 
 const populaBancoDeDados = async () => {
     connect();
+    try {
+        
 
     await Pokemon.insertMany([
         {
@@ -209,6 +215,13 @@ const populaBancoDeDados = async () => {
     ]);
 
     await mongoose.disconnect();
-}
+
+    console.log("SEED PLANTADA COM SUCESSO!")
+
+    } catch (error) {
+        console.log("Error 500 - Internal server error!");
+    }
+    
+};
 
 populaBancoDeDados();

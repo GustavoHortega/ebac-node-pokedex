@@ -33,6 +33,20 @@ router.get('/', async (req, res) =>{
             options.nome = {
                 $regex: filtros.nomeComecaCom + '.*', //REGEX
             };
+
+        }
+        
+        if(filtros.pesoMinimo){
+            options.peso = {
+                $gt: filtros.pesoMinimo,
+            };
+
+        }
+        
+        if(filtros.pesoMaximo){
+            options.peso = {
+                $lt: filtros.pesoMaximo,
+            };
         };
 
         const pokemons = await Pokemon.find(options);
@@ -99,6 +113,7 @@ router.delete('/:id', async (req, res) =>{
         res.json({
             sucesso: true,
             pokemomn: pokemon,
+            mensagem: "pokemon excluido!"
         });
         
     } catch (e) {
