@@ -87,6 +87,26 @@ router.patch('/:id', async (req, res) =>{
             erro: e,
         });
     }
+});
+
+//CRUD - DELETE
+router.delete('/:id', async (req, res) =>{
+    try {
+        const pokemon = await Pokemon.findOne( {_id: req.params._id});
+
+        await Pokemon.deleteOne(pokemon);
+
+        res.json({
+            sucesso: true,
+            pokemomn: pokemon,
+        });
+        
+    } catch (e) {
+        res.status(500).json({
+            sucesso: false,
+            erro: e,
+        });
+    }
 })
 
 
