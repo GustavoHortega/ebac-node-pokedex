@@ -59,8 +59,8 @@ router.get('/', async (req, res) =>{
         if(filtros.alturaMaxima){
             options.altura = {
                 $lte: filtros.alturaMaxima,
-            }
-        }
+            };
+        };
 
         const pokemons = await Pokemon.find(options);
         res.json({
