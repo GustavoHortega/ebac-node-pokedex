@@ -8,7 +8,13 @@ const { Pokemon } = require('../../models');
 // CRUD - CREATE
 router.post('/', async (req, res) => {
     try {
-        const pokemon = await Pokemon.create(req.body);
+        const pokemon = await Pokemon.create({
+            ...req.body,
+            ...{
+                capturadoPor: req.usuario._id
+            }
+
+        });
         res.status(201).json({
             sucesso: true,
             pokemon: pokemon,
@@ -35,6 +41,8 @@ router.get('/', async (req, res) =>{
             };
 
         }
+
+        options.capturadoPor = req.usuario._id;
         
         //Realizado o ajuste dos filtros que estavam com a lógica incorreta
         if(filtros.pesoMinimo){
@@ -106,7 +114,11 @@ router.get('/:_id', async (req, res) => {
 //CRUD - UPDATE (PATCH - faz o update somente do atributo indicado sem a necessidade de passar todos so parametros do pokemon):)
 router.patch('/:id', async (req, res) =>{
     try {
-        const pokemon = await Pokemon.findOne({_id: req.params.id});
+        const pokemon = await Pokemon.findOne({
+            _id: req.params.id,
+            capturadoPor: req.usuario._id
+            
+        });
 
         Object.keys(req.body).forEach((atributo) => {
             pokemon[atributo] = req.body[atributo];
@@ -130,7 +142,10 @@ router.patch('/:id', async (req, res) =>{
 //CRUD - DELETE
 router.delete('/:_id', async (req, res) =>{
     try {
-        const pokemon = await Pokemon.findOne( {_id: req.params._id});
+        const pokemon = await Pokemon.findOne({
+            _id: req.params._id,
+            capturadoPor: req.usuario._id
+        });
 
         await Pokemon.deleteOne(pokemon._id); // realizado correção - agora a exclusão acontece pelo _ID de forma que se não existir acusa o erro
 
