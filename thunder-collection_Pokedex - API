@@ -1,0 +1,185 @@
+{
+    "clientName": "Thunder Client",
+    "collectionName": "Pokedex - API",
+    "collectionId": "f831a93f-c150-424f-959b-9883cf9ff748",
+    "dateExported": "2025-01-29T20:36:33.449Z",
+    "version": "1.2",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "2bf5a1a5-4861-4657-91d6-7494b7bba307",
+            "colId": "f831a93f-c150-424f-959b-9883cf9ff748",
+            "containerId": "",
+            "name": "Status Check",
+            "url": "http://localhost:3000/api/status",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2025-01-21T18:16:45.716Z",
+            "modified": "2025-01-23T18:56:12.523Z",
+            "headers": []
+        },
+        {
+            "_id": "2a20b5d0-01b9-4e9d-9c10-031b272ef8bf",
+            "colId": "f831a93f-c150-424f-959b-9883cf9ff748",
+            "containerId": "",
+            "name": "CREATE(CAPTURA) POKEMON",
+            "url": "http://localhost:3000/api/captura/30",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2025-01-21T18:18:03.873Z",
+            "modified": "2025-01-29T20:34:01.048Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RlQGdtYWlsLmNvbSIsImlhdCI6MTczODE3OTQ1NX0.0nVdSs4RX_srda_srnWlgfhT_NdvHj27VoYB5Q_6ukM"
+                }
+            ]
+        },
+        {
+            "_id": "3581208a-aea9-4892-953f-88687a656eff",
+            "colId": "f831a93f-c150-424f-959b-9883cf9ff748",
+            "containerId": "",
+            "name": "POKEMON LIST",
+            "url": "http://localhost:3000/api/pokemons",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2025-01-21T18:38:32.658Z",
+            "modified": "2025-01-29T20:32:49.328Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RlQGdtYWlsLmNvbSIsImlhdCI6MTczODE3OTQ1NX0.0nVdSs4RX_srda_srnWlgfhT_NdvHj27VoYB5Q_6ukM"
+                }
+            ]
+        },
+        {
+            "_id": "a77d3a7f-4202-4762-9af6-b2d69491fb56",
+            "colId": "f831a93f-c150-424f-959b-9883cf9ff748",
+            "containerId": "",
+            "name": "POKEMON",
+            "url": "http://localhost:3000/api/pokemons/679794147244710e87c919b1",
+            "method": "GET",
+            "sortNum": 40000,
+            "created": "2025-01-22T18:14:52.067Z",
+            "modified": "2025-01-29T20:34:41.782Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RlQGdtYWlsLmNvbSIsImlhdCI6MTczODE3OTQ1NX0.0nVdSs4RX_srda_srnWlgfhT_NdvHj27VoYB5Q_6ukM"
+                }
+            ]
+        },
+        {
+            "_id": "9b2d82f9-b303-4813-8594-c8c83a585662",
+            "colId": "f831a93f-c150-424f-959b-9883cf9ff748",
+            "containerId": "",
+            "name": "POKEMON LIST FILTER",
+            "url": "http://localhost:3000/api/pokemons",
+            "method": "GET",
+            "sortNum": 40000,
+            "created": "2025-01-27T14:11:48.388Z",
+            "modified": "2025-01-29T19:37:48.964Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RlQGdtYWlsLmNvbSIsImlhdCI6MTczODE3OTQ1NX0.0nVdSs4RX_srda_srnWlgfhT_NdvHj27VoYB5Q_6ukM"
+                }
+            ],
+            "params": [
+                {
+                    "name": "alturaMinima",
+                    "value": "",
+                    "isDisabled": true,
+                    "isPath": false
+                },
+                {
+                    "name": "alturaMaxima",
+                    "value": "",
+                    "isDisabled": true,
+                    "isPath": false
+                },
+                {
+                    "name": "pesoMinimo",
+                    "value": "",
+                    "isDisabled": true,
+                    "isPath": false
+                },
+                {
+                    "name": "pesoMaximo",
+                    "value": "",
+                    "isDisabled": true,
+                    "isPath": false
+                }
+            ]
+        },
+        {
+            "_id": "07e4dab9-b3b9-4c38-8928-bf7ef1c1cd38",
+            "colId": "f831a93f-c150-424f-959b-9883cf9ff748",
+            "containerId": "",
+            "name": "UPDATE PATCH POKEMON",
+            "url": "http://localhost:3000/api/pokemons/67900889ff2e01a209ebcb3b",
+            "method": "PATCH",
+            "sortNum": 50000,
+            "created": "2025-01-22T18:17:15.999Z",
+            "modified": "2025-01-29T20:35:15.415Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RlQGdtYWlsLmNvbSIsImlhdCI6MTczODE3OTQ1NX0.0nVdSs4RX_srda_srnWlgfhT_NdvHj27VoYB5Q_6ukM"
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"nome\":\"squirtle\"\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "9073aa35-2960-4721-b9cd-41e9d6aaa370",
+            "colId": "f831a93f-c150-424f-959b-9883cf9ff748",
+            "containerId": "",
+            "name": "DELETE POKEMON",
+            "url": "http://localhost:3000/api/pokemons/67915cc810437bb607aa3585",
+            "method": "DELETE",
+            "sortNum": 60000,
+            "created": "2025-01-22T18:49:13.715Z",
+            "modified": "2025-01-29T20:35:39.189Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RlQGdtYWlsLmNvbSIsImlhdCI6MTczODE3OTQ1NX0.0nVdSs4RX_srda_srnWlgfhT_NdvHj27VoYB5Q_6ukM"
+                }
+            ]
+        },
+        {
+            "_id": "2e94f975-e724-4d75-999d-f0cb6e9d1c12",
+            "colId": "f831a93f-c150-424f-959b-9883cf9ff748",
+            "containerId": "",
+            "name": "POKEAPI",
+            "url": "https://pokeapi.co/api/v2/pokemon/1/",
+            "method": "GET",
+            "sortNum": 70000,
+            "created": "2025-01-22T19:07:26.294Z",
+            "modified": "2025-01-27T19:01:18.898Z",
+            "headers": []
+        },
+        {
+            "_id": "034b3174-87e8-40ed-9614-e2deac5a63c8",
+            "colId": "f831a93f-c150-424f-959b-9883cf9ff748",
+            "containerId": "",
+            "name": "LOGIN",
+            "url": "http://localhost:3000/api/autenticacao/login",
+            "method": "POST",
+            "sortNum": 80000,
+            "created": "2025-01-29T14:07:41.985Z",
+            "modified": "2025-01-29T14:09:52.213Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n\"email\":\"teste@gmail.com\",\n\"senha\":\"gugaegui\"\n}",
+                "form": []
+            }
+        }
+    ],
+    "ref": "NKFj9cPteWno93z4RIMmNUJK3OZjks11esIMFQ2-dLovM6sinPOAmGzgyh-3pWFgpJh6Z1ja-Ca6sOwyQHQqSQ"
+}
