@@ -1,7 +1,9 @@
 const mongoose = require('mongoose');
 
 const PokemonSchema = require('./pokemon');
+const UsuarioSchema = require('./usuario');
 
+const Usuario = require = mongoose.model('Usuario', UsuarioSchema);
 const Pokemon = require = mongoose.model('Pokemon', PokemonSchema);
 
 const connect = () => {
@@ -10,5 +12,6 @@ const connect = () => {
 
 module.exports = {
     Pokemon,
+    Usuario,
     connect
 }
