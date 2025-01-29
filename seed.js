@@ -1,7 +1,9 @@
 //PARA TESTES - POPULA O BANCO COM 10 POKEMONS
 const mongoose = require('mongoose');
+const bcrypt = require('bcrypt');
 
-const { Pokemon } = require('./models');
+const { Pokemon, Usuario } = require('./models');
+
 
 const connect = () =>{
     mongoose.connect('mongodb://localhost:27017/pokedex');
@@ -214,12 +216,25 @@ const populaBancoDeDados = async () => {
 
     ]);
 
+    await Usuario.create([
+        {
+            nome:'Gustavo',
+            email:'teste@gmail.com',
+            senha: await bcrypt.hash('gugaegui', 10)
+        },
+        {
+            nome:'Vitoria',
+            email:'test@gmail.com',
+            senha: await bcrypt.hash('aguamolepedradura', 10)
+        }
+    ]);
+
     await mongoose.disconnect();
 
     console.log("SEED PLANTADA COM SUCESSO!")
 
     } catch (error) {
-        console.log("Error 500 - Internal server error!");
+        console.log("Error 500 - Internal server error!", error);
     }
     
 };
