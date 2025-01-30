@@ -49,6 +49,6 @@ const Pokemon = new Schema({
 
 });
 
-Pokemon.index({capturadoPor: 1});
+Pokemon.index({capturadoPor: 1}); // transforma o campo selecionado em um index para o servidor.
 
 module.exports = Pokemon;

@@ -1,8 +1,10 @@
 const dotenv = require('dotenv').config();
 
-const express = require('express'); //express import
-const expressEjsLayouts = require('express-ejs-layouts'); // EJS-Layouts import
-const path = require('path'); //path import
+const express = require('express');                         //express import
+const passport = require('passport');                       //passport import
+const session = require('express-session');                 //session import
+const expressEjsLayouts = require('express-ejs-layouts');   // EJS-Layouts import
+const path = require('path');                               //path import
 
 const app = express(); 
 
@@ -16,6 +18,15 @@ const createErro = require('http-errors');
 const batalhaRouter = require('./routes/batalha');
 const pokemonsRouter = require('./routes/pokemons');
 const apiRouter = require('./routes/api');
+
+//config autenticação (passport e express-session)
+app.use(session({
+    secret: process.env.SESSION_SECRET,
+    resave: false,
+    saveUninitialized: false
+}));
+app.use(passport.initialize());
+app.use(passport.session());
 
 //EJS e Layouts
 app.set('views', path.join(__dirname, 'views'));
