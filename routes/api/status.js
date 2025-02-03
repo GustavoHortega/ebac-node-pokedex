@@ -11,7 +11,7 @@ const middleware = (req, res, next) =>{
 
 router.get('/', middleware, (req,res)=>{
     res.json({
-        status:"ok",
+        status:"funcionando",
     })
 });
 
