@@ -4,6 +4,7 @@ const { Pokemon } = require('../models')
 
 const router = express.Router();
 
+//Trás a view pokemons e timestamp de cada pokemon.
 router.get('/', async (__,res)=> {
     const pokemons = await Pokemon.find();
     pokemons.forEach(pokemon =>{
@@ -19,6 +20,7 @@ router.get('/', async (__,res)=> {
     });
 });
 
+//Trás a view de informações de um pokemon e retorna um erro caso o pokemon não seja encontrado em nosso banco.
 router.get('/:id', async (req, res) => {
     try{
     const pokemon = await Pokemon.findOne({ _id: req.params.id })

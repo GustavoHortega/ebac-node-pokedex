@@ -1,5 +1,6 @@
 const axios = require('axios');
 
+//busca da pokeapi as informações referentes ao pokemon capturado.
 const buscaInfoPokemon = (pokeId) => {
     return new Promise( async (resolve, reject) => {
         const url = process.env.API_EXTERNA_URL + pokeId;

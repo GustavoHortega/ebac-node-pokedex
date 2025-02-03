@@ -5,6 +5,7 @@ const { Pokemon } = require('../../models')
 
 const router = express.Router();
 
+//Grava o pokemon capturado no banco de dados a partir da busca feita no serviço "buscaPokemon.js"
 router.post('/:id', async (req, res) => {
     try{
        const pokemon = await buscaInfoPokemon(req.params.id);
