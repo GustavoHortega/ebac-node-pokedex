@@ -29,7 +29,8 @@ const populaBancoDeDados = async () => {
                 'especial-attack': 50,
                 'especial-defense': 64,
                 speed:43
-            }
+            },
+            capturadoPor:"679a6f83e8cfc2cfb2ceb572"
         },
 
         {
@@ -46,7 +47,8 @@ const populaBancoDeDados = async () => {
                 'special-attack': 40,
                 'special-defense': 79,
                 speed: 47
-            }
+            },
+            capturadoPor:"679a6f83e8cfc2cfb2ceb572"
         },
 
         {
@@ -63,7 +65,8 @@ const populaBancoDeDados = async () => {
                 'special-attack': 40,
                 'special-defense': 50,
                 speed: 40
-            }
+            },
+            capturadoPor:"679a6f83e8cfc2cfb2ceb572"
         },
 
         {
@@ -81,7 +84,8 @@ const populaBancoDeDados = async () => {
                 'special-attack': 61,
                 'special-defense': 79,
                 speed: 42
-            }
+            },
+            capturadoPor:"679a6f83e8cfc2cfb2ceb572"
               
             
         },
@@ -102,6 +106,7 @@ const populaBancoDeDados = async () => {
                 'special-defense': 61,
                 speed: 84
             },
+            capturadoPor:"679a6f83e8cfc2cfb2ceb572"
               
         },
 
@@ -120,7 +125,8 @@ const populaBancoDeDados = async () => {
                 'special-attack': 50,
                 'special-defense': 100,
                 speed: 50
-            }
+            },
+            capturadoPor:"679a6f83e8cfc2cfb2ceb572"
         },
 
         {
@@ -138,7 +144,8 @@ const populaBancoDeDados = async () => {
                 'special-attack': 110,
                 'special-defense': 95,
                 speed: 65
-            }
+            },
+            capturadoPor:"679a6f83e8cfc2cfb2ceb572"
         },
 
         {
@@ -156,7 +163,8 @@ const populaBancoDeDados = async () => {
                 'special-attack': 80,
                 'special-defense': 115,
                 speed: 138
-            }
+            },
+            capturadoPor:"679a6f83e8cfc2cfb2ceb572"
         },
 
         {
@@ -174,7 +182,8 @@ const populaBancoDeDados = async () => {
                 'special-attack': 60,
                 'special-defense': 60,
                 speed: 50
-            }
+            },
+            capturadoPor:"679a6f83e8cfc2cfb2ceb572"
         },
 
         {
@@ -192,7 +201,8 @@ const populaBancoDeDados = async () => {
                 'special-attack': 55,
                 'special-defense': 55,
                 speed: 90
-            }
+            },
+            capturadoPor:"679a6f83e8cfc2cfb2ceb572"
         },
 
         {
@@ -210,24 +220,25 @@ const populaBancoDeDados = async () => {
                 'special-attack': 60,
                 'special-defense': 80,
                 speed: 25
-            }
+            },
+            capturadoPor:"679a6f83e8cfc2cfb2ceb572"
         }
 
 
     ]);
 
-    await Usuario.create([
-        {
-            nome:'Gustavo',
-            email:'teste@gmail.com',
-            senha: await bcrypt.hash('gugaegui', 10)
-        },
-        {
-            nome:'Vitoria',
-            email:'test@gmail.com',
-            senha: await bcrypt.hash('aguamolepedradura', 10)
-        }
-    ]);
+    // await Usuario.create([
+    //     {
+    //         nome:'Gustavo',
+    //         email:'teste@gmail.com',
+    //         senha: await bcrypt.hash('gugaegui', 10)
+    //     },
+    //     {
+    //         nome:'Vitoria',
+    //         email:'test@gmail.com',
+    //         senha: await bcrypt.hash('aguamolepedradura', 10)
+    //     }
+    // ]);
 
     await mongoose.disconnect();
 
