@@ -25,4 +25,19 @@ router.post('/', passport.authenticate('local', {
     failureRedirect: '/auth?erroNoLogin=true'
 }));
 
+//rotas google oauth2
+router.get('/google', checaNaoAutenticado, passport.authenticate('google'));
+
+router.get('/oauth2/redirect/google', checaNaoAutenticado, 
+    passport.authenticate('google',{
+        failureRedirect: '/auth',
+        failureMessage: true
+
+    }), (req, res) => {
+        res.redirect('/');
+    }
+);
+
+
+
 module.exports = router;
