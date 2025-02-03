@@ -6,7 +6,11 @@ const session = require('express-session');                 //session import
 const expressEjsLayouts = require('express-ejs-layouts');   // EJS-Layouts import
 const path = require('path');                               //path import
 
-const app = express(); 
+const app = express();
+
+//consfigurando leitura de corpo
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
 
 //Importa conexão
 const { connect } = require('./models');
@@ -14,10 +18,17 @@ const { connect } = require('./models');
 //Erros HTTP
 const createErro = require('http-errors');
 
+require('./routes/auth/');
+
 //Importa routers
 const batalhaRouter = require('./routes/batalha');
 const pokemonsRouter = require('./routes/pokemons');
+const autenticacaoRouter = require('./routes/auth');
+const homeRouter = require('./routes/home');
 const apiRouter = require('./routes/api');
+
+//importa o middlleware
+const { checaAutenticado } = require('./routes/middlewares/checa-autenticacao');
 
 //config autenticação (passport e express-session)
 app.use(session({
@@ -37,8 +48,10 @@ app.use(expressEjsLayouts);
 app.use(express.static(path.join(__dirname, 'public')));
 
 //rotas declaradas
-app.use('/pokemons', pokemonsRouter);
-app.use('/batalha', batalhaRouter);
+app.use('/auth', autenticacaoRouter);
+app.use('/pokemons', checaAutenticado, pokemonsRouter);
+app.use('/batalha', checaAutenticado, batalhaRouter);
+app.use('/', checaAutenticado, homeRouter);
 
 //rotas api
 app.use('/api', apiRouter);
