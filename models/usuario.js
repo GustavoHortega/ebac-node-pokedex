@@ -23,6 +23,10 @@ const Usuario = new Schema({
     googleUsuarioID:{
         type: String,
         required: false
+    },
+    gitHubUsuarioID:{
+        type: String,
+        required: false
     }
 
 });
