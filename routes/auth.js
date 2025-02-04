@@ -29,14 +29,27 @@ router.post('/', passport.authenticate('local', {
 router.get('/google', checaNaoAutenticado, passport.authenticate('google'));
 
 router.get('/oauth2/redirect/google', checaNaoAutenticado, 
-    passport.authenticate('google',{
+    passport.authenticate('google', {
         failureRedirect: '/auth',
         failureMessage: true
 
-    }), (req, res) => {
+    }), (_req, res) => {
         res.redirect('/');
     }
 );
+
+//rotas github oauth2
+router.get('/github', checaNaoAutenticado, passport.authenticate('github'));
+
+router.get('/oauth2/redirect/github', checaNaoAutenticado,
+    passport.authenticate('github', {
+        failureRedirect: '/auth',
+        failureMessage: true
+
+    }), (_req, res) => {
+        res.redirect('/');
+    }
+)
 
 
 
