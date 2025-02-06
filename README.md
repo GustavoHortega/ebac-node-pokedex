@@ -1,6 +1,6 @@
 # Pokédex EBAC
 
-![Pokédex Banner](https://example.com/banner.png)  
+![Pokédex Banner](http://localhost:3000/images/pikachu-home.png)  
 *Uma Pokédex interativa desenvolvida com Node.js*  
 
 ## 📌 Sobre o Projeto
