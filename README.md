@@ -59,7 +59,7 @@ Certifique-se de preencher os valores corretamente para garantir o funcionamento
    ```
 3. Instale as dependências:
    ```sh
-   npm install axios bcrypt cors dotenv ejs express express-ejs-layouts express-session jsonwebtoken mongoose nodemon passport passport-github2 passport-google-oauth passport-local
+   npm install
    ```
 4. Inicie o servidor:
    ```sh
