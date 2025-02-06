@@ -92,5 +92,5 @@ Sinta-se à vontade para contribuir com melhorias! Para isso:
 
 ---
 
-Desenvolvido com ❤️ por Gustavo Hortegav(https://github.com/GustavoHortega)
+Desenvolvido com ❤️ por Gustavo Hortega(https://github.com/GustavoHortega)
 
