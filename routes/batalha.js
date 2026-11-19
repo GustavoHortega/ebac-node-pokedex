@@ -1,6 +1,6 @@
 const express = require('express');
 
-const buscaInfoPokemon = require('../services/busca-pokemon');
+const {buscaInfoPokemon} = require('../services');
 
 const router = express.Router();
 
