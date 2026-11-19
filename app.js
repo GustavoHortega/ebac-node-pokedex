@@ -4,6 +4,7 @@ const express = require('express');                         //express import
 const passport = require('passport');                       //passport import
 const session = require('express-session');                 //session import
 const expressEjsLayouts = require('express-ejs-layouts');   // EJS-Layouts import
+const cookieParser = require('cookie-parser');              // Cookie-parser
 const path = require('path');                               //path import
 
 const app = express();
@@ -38,6 +39,9 @@ app.use(session({
 }));
 app.use(passport.initialize());
 app.use(passport.session());
+
+//Cookie-parses
+app.use(cookieParser());
 
 //EJS e Layouts
 app.set('views', path.join(__dirname, 'views'));
