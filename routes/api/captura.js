@@ -1,5 +1,5 @@
 const express = require('express');
-const buscaInfoPokemon = require('../../services/busca-pokemon');
+const { buscaInfoPokemon } = require('../../services');
 
 const { Pokemon } = require('../../models')
 
@@ -10,7 +10,8 @@ router.post('/:id', async (req, res) => {
     try{
        const pokemon = await buscaInfoPokemon(req.params.id);
 
-        const pokemonFoiCapturado = Math.random() <= 0.7;
+        const pokemonFoiCapturado = Math.random() <= 0.5;
+        console.log(pokemonFoiCapturado)
 
         if(pokemonFoiCapturado) {
             try{
