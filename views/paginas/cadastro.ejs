@@ -1,0 +1,30 @@
+<div class="row align-items-center">
+    <div class="col">
+        <div class="d-grid gap-5">
+        <img src="/images/pokemon-home.png" class="img-fluid" alt="Logo pokemon" />
+
+        <form action="/usuarios/cadastro" method="post">
+            <div class="d-grid gap-3">
+
+            <% if (locals.error) { %>
+                <p class="text-center error-message"> <%= error %></p>
+            <% } %>
+
+            <input name="nome" type="text" placeholder="nome" required/>
+            <input name="email" type="email" placeholder="email" required/>
+            <input name="senha" type="password" placeholder="senha" required/>
+
+            <button type="submit" class="btn btn-warning">CADASTRAR</button>
+            <p></p>
+            <a href="/auth" class="btn btn-outline-warning">Já tenho um usuário</a>
+
+            </div>
+        </form>
+
+
+        </div>
+    </div>
+    <div class="col">
+        <img src="/images/pikachu-home.png" class="img-fluid" alt="Pikachu dando oi" />
+    </div>
+</div>

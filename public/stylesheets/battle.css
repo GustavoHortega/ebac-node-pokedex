@@ -1,16 +1,24 @@
 
+.battle-screen {
+  min-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px 0;
+}
+
 .trainer-wrapper .battle-figure {
-  max-height: 20vh;
+  max-height: 22vh;
 }
 
 .trainer-wrapper .field {
-  bottom: -30px;
+  bottom: -15px;
 }
 
 .pokeball {
   position: absolute;
-  left: 0px;
-  right: 0px;
+  left: 0;
+  right: 0;
   bottom: 10px;
   width: 50px;
   height: 50px;
@@ -36,7 +44,7 @@
 
 .pokeball::before,
 .pokeball::after {
-  content:"";
+  content: "";
   position: absolute;
 }
 
@@ -68,12 +76,12 @@
 }
 
 @keyframes blink-ball {
-  from { background: #eee;}
+  from { background: #eee; }
   to { background: #e74c3c; }
 }
 
 @keyframes shake {
-  0 { transform: translate(0, 0) rotate(0); }
+  0% { transform: translate(0, 0) rotate(0); }
   20% { transform: translate(-2.5px, 0) rotate(-20deg); }
   30% { transform: translate(2.5px, 0) rotate(20deg); }
   50% { transform: translate(-2.5px, 0) rotate(-10deg); }
@@ -81,8 +89,8 @@
   100% { transform: translate(0, 0) rotate(0); }
 }
 
-
-.pokemon-wrapper, .trainer-wrapper {
+.pokemon-wrapper,
+.trainer-wrapper {
   position: relative;
   animation: slide-in linear 1000ms forwards;
 }
@@ -100,6 +108,7 @@
     transform: translateX(0);
   }
 }
+
 @-webkit-keyframes slide-in {
   to {
     transform: translateX(0);
@@ -107,12 +116,12 @@
 }
 
 .battle-figure {
-  height: 100%;
+  height: auto;
   width: auto;
+  max-height: 30vh;
   display: block;
   margin-left: auto;
   margin-right: auto;
-  max-height: 30vh;
   position: relative;
   z-index: 2;
   transition: all ease-in 250ms;
@@ -121,9 +130,9 @@
 
 .field {
   width: 40%;
-  bottom: -15px;
-  left: 0px;
-  right: 0px;
+  bottom: -8px;
+  left: 0;
+  right: 0;
   margin-left: auto;
   margin-right: auto;
   position: absolute;
@@ -137,16 +146,76 @@
 }
 
 @keyframes appear-after-slide {
-  to {
-    opacity: 1;
-  }
+  to { opacity: 1; }
 }
+
 @-webkit-keyframes appear-after-slide {
-  to {
-    opacity: 1;
-  }
+  to { opacity: 1; }
 }
 
 .stats {
-  margin: 2rem 0rem;
+  margin: 0.5rem 0;
+}
+
+.battle .info {
+  margin-bottom: 0.2rem;
+}
+
+.battle .progress {
+  height: 14px;
+}
+
+.battle .progress-bar {
+  font-size: 10px;
+}
+
+.battle .label {
+  font-size: 0.8rem;
+}
+
+.battle {
+  margin-bottom: 1rem;
+}
+
+.battle-bottom {
+  margin-top: 1rem;
+}
+
+/* Telas com pouca altura */
+@media (max-height: 800px) {
+  .battle-screen {
+    min-height: 85vh;
+  }
+
+  .battle-figure {
+    max-height: 27vh;
+  }
+
+  .trainer-wrapper .battle-figure {
+    max-height: 20vh;
+  }
+
+  .battle .stats {
+    margin: 0.3rem 0;
+  }
+}
+
+/* Celulares */
+@media (max-width: 576px) {
+  .battle-screen {
+    min-height: auto;
+    padding: 20px 0;
+  }
+
+  .battle-figure {
+    max-width: 100%;
+  }
+
+  .field {
+    width: 65%;
+  }
+
+  .button-battle-group {
+    font-size: 0.65rem;
+  }
 }

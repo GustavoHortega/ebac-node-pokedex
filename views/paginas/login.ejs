@@ -4,7 +4,7 @@
         <img src="/images/pokemon-home.png" class="img-fluid" alt="Logo pokemon" />
 
         <form action="/auth" method="post">
-            <div class="d-grid gap-2">
+            <div class="d-grid gap-3">
             <input name="email" type="email" placeholder="email" />
             <input name="password" type="password" placeholder="senha" />
 
@@ -12,11 +12,13 @@
                 <p class="text-center error-message">usuário / senha incorretos</p>
             <% } %>
             <button type="submit" class="btn btn-warning">LOGIN</button>
+            <a href="/usuarios/cadastro" class="btn btn-outline-warning">Cadastrar</a>
 
             <p class="separator-login">OU</p>
 
             <a href="/auth/google" class="btn btn-outline-warning">GOOGLE LOGIN</a>
             <a href="/auth/github" class="btn btn-outline-warning">GITHUB LOGIN</a>
+
             </div>
         </form>
 
