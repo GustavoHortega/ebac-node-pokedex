@@ -21,10 +21,36 @@ router.get('/logout', checaAutenticado, async (req, res, next) => {
     });
 });
 
-router.post('/', passport.authenticate('local', {
-    successRedirect: '/',
-    failureRedirect: '/auth?erroNoLogin=true'
-}));
+
+router.post('/', (req, res, next) => {
+    passport.authenticate('local', (err, usuario) => {
+        if (err) {
+            return next(err);
+        }
+
+        if (!usuario) {
+            return res.redirect('/auth?erroNoLogin=true');
+        }
+
+        req.logIn(usuario, (err) => {
+            if (err) {
+                return next(err);
+            }
+
+            const token = geraToken(usuario);
+
+            res.cookie('token', token, {
+                httpOnly: true,
+                secure: process.env.NODE_ENV === 'production',
+                sameSite: 'lax',
+                maxAge: 24 * 60 * 60 * 1000
+            });
+
+            return res.redirect('/');
+        });
+    })(req, res, next);
+});
+
 
 //rotas google oauth2
 router.get('/google', checaNaoAutenticado,
