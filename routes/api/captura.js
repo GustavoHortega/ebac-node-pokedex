@@ -10,7 +10,7 @@ router.post('/:id', async (req, res) => {
     try{
        const pokemon = await buscaInfoPokemon(req.params.id);
 
-        const pokemonFoiCapturado = Math.random() <= 0.5;
+        const pokemonFoiCapturado = Math.random() <= 0.3;
         console.log(pokemonFoiCapturado)
 
         if(pokemonFoiCapturado) {
