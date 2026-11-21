@@ -27,6 +27,7 @@ const pokemonsRouter = require('./routes/pokemons');
 const autenticacaoRouter = require('./routes/auth');
 const homeRouter = require('./routes/home');
 const apiRouter = require('./routes/api');
+const usuariosrouter = require('./routes/usuarios');
 
 //importa o middlleware
 const { checaAutenticado } = require('./routes/middlewares/checa-autenticacao');
@@ -55,6 +56,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/auth', autenticacaoRouter);
 app.use('/pokemons', checaAutenticado, pokemonsRouter);
 app.use('/batalha', checaAutenticado, batalhaRouter);
+app.use('/usuarios', usuariosrouter);
 app.use('/', checaAutenticado, homeRouter);
 
 //rotas api
